@@ -1,0 +1,38 @@
+{
+    "taches": [
+        {
+            "id": 101,
+            "title": "1. Fonctionnalités",
+            "description": "",
+            "date_creation": "2025-01-01",
+            "date_echeance": "2025-03-01",
+            "done": true,
+            "urgent": false,
+            "contacts": [
+                {
+                    "name": "Paul"
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "title": "2. Etude de marché",
+            "description": "",
+            "date_creation": "2025-01-02",
+            "date_echeance": "2025-03-01",
+            "done": true,
+            "urgent": true,
+            "contacts": []
+        }
+    ],
+    "relations": [
+        {
+            "tache": 102,
+            "categorie": 201
+        },
+        {
+            "tache": 108,
+            "categorie": 201
+        }
+    ]
+}
