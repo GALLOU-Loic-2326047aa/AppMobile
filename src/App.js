@@ -15,6 +15,11 @@ function App() {
     setTachesAfficher(BDGA1.taches); 
   }, []);
 
+  useEffect(() => {
+    setTachesAfficher(taches);
+  }, [taches]); 
+
+
   return (
     <div className='App-header'>
       <h2>Liste des Tâches</h2>
