@@ -1,10 +1,10 @@
 import TacheItem from "./tacheItem";
 
-const TacheList = ({ taches, setTaches }) => {
+const TacheList = ( {setTaches, tachesAfficher }) => {
   return (
     <ul>
-      {taches.map((tache) => (
-        <TacheItem key={tache.id} tache={tache} setTaches={setTaches} taches={taches} />
+      {tachesAfficher.map((tache) => (
+        <TacheItem key={tache.id} tache={tache} setTaches={setTaches} tachesAfficher={tachesAfficher} />
       ))}
     </ul>
   );

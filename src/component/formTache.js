@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ajouterTache } from "./tacheService";
-
-const FormTache = ({ setTaches }) => {
+import { filterUrgent ,resetTaches} from "./tacheFilter";  // Ajout de l'import
+const FormTache = ({ setTaches, taches, setTachesAfficher}) => {
   const [nouvelleTache, setNouvelleTache] = useState({
     title: "",
     description: "",
@@ -17,7 +17,10 @@ const FormTache = ({ setTaches }) => {
       <input type="text" placeholder="Titre" value={nouvelleTache.title}
         onChange={(e) => setNouvelleTache({ ...nouvelleTache, title: e.target.value })}
       />
-      <button onClick={() => ajouterTache([], setTaches, nouvelleTache)}>Ajouter</button>
+      <button onClick={() => ajouterTache(setTaches, nouvelleTache)}>Ajouter</button>
+      <button onClick={() =>filterUrgent(taches,setTachesAfficher)}>urgent</button>
+      <button onClick={() =>resetTaches(taches,setTachesAfficher)}>réinitialiser</button>
+
     </div>
   );
 };

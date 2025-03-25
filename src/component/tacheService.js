@@ -1,10 +1,14 @@
-// Ajouter une tâche
-export const ajouterTache = (taches, setTaches, nouvelleTache) => {
-    if (nouvelleTache.title.trim() === "") return;
-    setTaches([...taches, { id: Date.now(), ...nouvelleTache }]);
-  };
+export const ajouterTache = (setTaches, nouvelleTache) => {
+  if (nouvelleTache.title.trim() === "") return;
+
+  setTaches(prevTaches => {
+    const lastId = prevTaches.length > 0 ? Math.max(...prevTaches.map(t => t.id)) : 101;
+    const newTache = { id: lastId + 1, ...nouvelleTache };
+
+    return [...prevTaches, newTache]; 
+  });
+};
   
-  // Modifier une tâche
   export const modifierTache = (taches, setTaches, id) => {
     const nouveauTitre = prompt("Nouveau titre ?");
     const nouvelleDesc = prompt("Nouvelle description ?");
@@ -17,12 +21,10 @@ export const ajouterTache = (taches, setTaches, nouvelleTache) => {
     );
   };
   
-  // Supprimer une tâche
   export const supprimerTache = (taches, setTaches, id) => {
     setTaches(taches.filter(tache => tache.id !== id));
   };
   
-  // Changer le statut fait/urgent
   export const toggleDone = (taches, setTaches, id) => {
     setTaches(taches.map(tache => 
       tache.id === id ? { ...tache, done: !tache.done } : tache
