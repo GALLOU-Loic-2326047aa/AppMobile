@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -8,7 +8,7 @@ body {
   color: #333;
 }
 
-/* App styles */
+/* App Layout */
 .App {
   text-align: center;
 }
@@ -35,22 +35,19 @@ body {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
+/* Logo Animation */
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* Form Styles */
-div {
-  background-color: #fff;
+/* General Form Container */
+.form-container {
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre marquée */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
@@ -58,27 +55,26 @@ div {
   transition: max-width 0.3s ease;
 }
 
-/* Form heading */
-h2 {
+/* Form Heading */
+.form-container h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.5rem;
   color: #4CAF50;
 }
 
-/* Labels */
+/* Input & Labels */
 label {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 8px;
   display: inline-block;
-  text-align: left;
   width: 100%;
+  text-align: left;
   color: #333;
 }
 
-/* Input fields */
-input[type="text"], input[type="date"] {
+input[type="text"], input[type="date"], input[type="checkbox"] {
   width: 100%;
   padding: 10px;
   margin: 8px 0 15px;
@@ -91,13 +87,6 @@ input[type="text"], input[type="date"] {
 
 input[type="checkbox"] {
   margin-right: 8px;
-}
-
-/* Error message */
-p {
-  color: red;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
 }
 
 /* Buttons */
@@ -121,86 +110,153 @@ button:focus {
   outline: none;
 }
 
-/* Layout for checkboxes */
-div > label {
-  display: inline-block;
-  margin-right: 15px;
+/* Error Messages */
+p {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
-/* Responsive Styling for screens */
+/* Task List Styles */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-list li {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.task-list li strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #4CAF50;
+}
+
+.task-list p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Status and Urgency Buttons */
+.task-list .status, .task-list .urgent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.task-list .status button,
+.task-list .urgent button {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-list .status button:hover,
+.task-list .urgent button:hover {
+  background-color: #e53935;
+}
+
+/* Task Contacts */
+.task-list .contacts {
+  margin-top: 15px;
+}
+
+.task-list .contacts p {
+  font-weight: 600;
+}
+
+.task-list .contacts ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.task-list .contacts ul li {
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.task-list .contacts ul li button {
+  background-color: #f44336;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.task-list .contacts ul li button:hover {
+  background-color: #e53935;
+}
+
+.task-list .contacts ul li:first-child {
+  color: #888; /* Pour "Aucun contact" */
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 1024px) {
-  div {
+  .form-container {
     padding: 15px;
     max-width: 90%;
   }
 
-  label, input[type="text"], input[type="date"], input[type="checkbox"], button {
+  .form-container label,
+  .form-container input[type="text"],
+  .form-container input[type="date"],
+  .form-container input[type="checkbox"],
+  .form-container button {
     width: 100%;
-    box-sizing: border-box;
   }
 
-  button {
+  .form-container button {
     margin-top: 10px;
   }
 
-  h2 {
+  .form-container h2 {
     font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  div {
+  .form-container {
     max-width: 95%;
   }
 
-  h2 {
+  .form-container h2 {
     font-size: 1.1rem;
   }
 
-  button {
+  .form-container button {
     padding: 12px 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  div {
+  .form-container {
     max-width: 100%;
   }
 
-  h2 {
+  .form-container h2 {
     font-size: 1rem;
   }
 
-  button {
+  .form-container button {
     width: 100%;
     margin-top: 15px;
   }
-}
-
-/* Contact Styles */
-.App-header ul ul li {
-  background-color: #f0f0f0; /* Fond clair pour les contacts */
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 8px; /* Espacement entre chaque contact */
-  color: #333;
-}
-
-.App-header ul ul li button {
-  background-color: #f44336; /* Rouge pour les boutons de suppression */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.App-header ul ul li button:hover {
-  background-color: #e53935; /* Changer la couleur au survol */
-}
-
-/* Si aucun contact n'est ajouté */
-.App-header ul ul li:first-child {
-  color: #888; /* Gris pour l'élément "Aucun contact" */
 }
