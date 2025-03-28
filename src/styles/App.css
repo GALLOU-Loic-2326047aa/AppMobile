@@ -1,3 +1,18 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* App styles */
 .App {
   text-align: center;
 }
@@ -34,5 +49,139 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Form Styles */
+div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Augmenter pour les grands écrans */
+  box-sizing: border-box;
+  margin: auto;
+  transition: max-width 0.3s ease; /* Transition fluide lors du redimensionnement */
+}
+
+/* Form heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #4CAF50;
+}
+
+/* Labels */
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  color: #333; /* Couleur foncée pour les labels */
+}
+
+/* Input fields */
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Error message */
+p {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Layout for checkboxes */
+div > label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* Responsive Styling for screens */
+@media screen and (max-width: 1024px) {
+  div {
+    padding: 15px;
+    max-width: 90%; /* Le formulaire occupe 90% de l'écran pour les écrans plus petits */
+  }
+
+  label, input[type="text"], input[type="date"], input[type="checkbox"], button {
+    width: 100%; /* Tous les éléments prennent 100% de la largeur disponible */
+    box-sizing: border-box; /* Pour garantir que tout reste dans les limites */
+  }
+
+  button {
+    margin-top: 10px; /* Marge supérieure pour espacer les boutons */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* Taille réduite du titre pour les petits écrans */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div {
+    max-width: 95%; /* Occupe encore plus d'espace sur les petits écrans */
+  }
+
+  h2 {
+    font-size: 1.1rem; /* Ajustement de la taille du texte pour des écrans plus petits */
+  }
+
+  button {
+    padding: 12px 20px; /* Plus grand pour faciliter la pression des boutons */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div {
+    max-width: 100%; /* Le formulaire occupe toute la largeur possible */
+  }
+
+  h2 {
+    font-size: 1rem; /* Taille du titre encore plus petite */
+  }
+
+  button {
+    width: 100%; /* Les boutons prennent toute la largeur */
+    margin-top: 15px; /* Espacement accru entre les boutons */
   }
 }

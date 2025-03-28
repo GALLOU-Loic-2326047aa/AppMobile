@@ -8,8 +8,7 @@ function App() {
   const [taches, setTaches] = useState([]);
   const [tachesAfficher, setTachesAfficher] = useState([]);
 
-  console.log(taches)
-  console.log(tachesAfficher)
+
   useEffect(() => {
     setTaches(BDGA1.taches);
     setTachesAfficher(BDGA1.taches); 
