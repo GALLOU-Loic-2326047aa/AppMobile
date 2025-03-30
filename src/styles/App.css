@@ -1,262 +1,230 @@
-/* Global Styles */
-body {
+/* Styles de base */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f6; /* Légère nuance grisâtre */
-  color: #333;
-}
-
-/* App Layout */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-/* Logo Animation */
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* General Form Container */
-.form-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
+  padding: 0;
   box-sizing: border-box;
-  margin: auto;
-  transition: max-width 0.3s ease;
+  font-family: Arial, sans-serif;
 }
 
-/* Form Heading */
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Header */
+h1 {
   font-size: 1.5rem;
-  color: #4CAF50;
-}
-
-/* Input & Labels */
-label {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: inline-block;
-  width: 100%;
-  text-align: left;
+  margin-bottom: 20px;
+  text-align: center;
   color: #333;
 }
 
-input[type="text"], input[type="date"], input[type="checkbox"] {
+/* Conteneur principal */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Formulaires */
+form {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form textarea,
+form button {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0 15px;
+  padding: 12px;
+  margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
   font-size: 1rem;
-  background-color: #f9f9f9;
 }
 
-input[type="checkbox"] {
-  margin-right: 8px;
+form input[type="checkbox"] {
+  width: auto;
 }
 
-/* Buttons */
-button {
-  background-color: #4CAF50;
+form button {
+  background-color: #007bff;
   color: white;
-  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  margin: 5px;
-  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #45a049;
+form button:hover {
+  background-color: #0056b3;
 }
 
-button:focus {
-  outline: none;
-}
-
-/* Error Messages */
-p {
-  color: red;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-}
-
-/* Task List Styles */
-.task-list {
-  list-style: none;
+/* Liste des tâches et catégories */
+ul {
+  list-style-type: none;
   padding: 0;
-  margin-top: 20px;
 }
 
-.task-list li {
+ul li {
   background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 15px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.task-list li strong {
-  display: block;
-  font-size: 1.2rem;
-  color: #4CAF50;
-}
-
-.task-list p {
-  font-size: 0.9rem;
-  margin: 5px 0;
-  color: #555;
-}
-
-/* Status and Urgency Buttons */
-.task-list .status, .task-list .urgent {
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.task-list .status button,
-.task-list .urgent button {
+ul li h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+ul li p {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+button {
   background-color: #f44336;
   color: white;
   padding: 5px 10px;
-  border: none;
   border-radius: 4px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-.task-list .status button:hover,
-.task-list .urgent button:hover {
+button:hover {
   background-color: #e53935;
 }
 
-/* Task Contacts */
-.task-list .contacts {
-  margin-top: 15px;
+button.modify {
+  background-color: #4caf50;
 }
 
-.task-list .contacts p {
-  font-weight: 600;
+button.modify:hover {
+  background-color: #388e3c;
 }
 
-.task-list .contacts ul {
-  padding-left: 20px;
-  list-style-type: none;
+/* Sélecteur de catégorie */
+select {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  font-size: 1rem;
 }
 
-.task-list .contacts ul li {
-  background-color: #f0f0f0;
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  color: #333;
+select option {
+  padding: 10px;
 }
 
-.task-list .contacts ul li button {
-  background-color: #f44336;
-  color: white;
-  padding: 5px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+/* Footer */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-.task-list .contacts ul li button:hover {
-  background-color: #e53935;
+/* Recherche et filtres */
+input[type="text"] {
+  width: 100%;
+  max-width: 200px;
+  margin-right: 10px;
+  font-size: 1rem;
+  padding: 10px;
 }
 
-.task-list .contacts ul li:first-child {
-  color: #888; /* Pour "Aucun contact" */
+select {
+  width: 100%;
+  max-width: 150px;
+  margin-right: 10px;
+  font-size: 1rem;
+  padding: 10px;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 1024px) {
-  .form-container {
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  form {
     padding: 15px;
-    max-width: 90%;
   }
 
-  .form-container label,
-  .form-container input[type="text"],
-  .form-container input[type="date"],
-  .form-container input[type="checkbox"],
-  .form-container button {
-    width: 100%;
+  form input,
+  form select,
+  form textarea,
+  form button {
+    padding: 10px;
   }
 
-  .form-container button {
-    margin-top: 10px;
+  ul li {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .form-container h2 {
-    font-size: 1.25rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .form-container {
-    max-width: 95%;
-  }
-
-  .form-container h2 {
-    font-size: 1.1rem;
-  }
-
-  .form-container button {
-    padding: 12px 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .form-container {
-    max-width: 100%;
-  }
-
-  .form-container h2 {
+  ul li h3 {
     font-size: 1rem;
   }
 
-  .form-container button {
+  button {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+
+  button.modify {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  input[type="text"],
+  select {
     width: 100%;
-    margin-top: 15px;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries pour très petits écrans (mobiles très petits) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  form input,
+  form select,
+  form textarea,
+  form button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  ul li {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 5px 8px;
   }
 }
