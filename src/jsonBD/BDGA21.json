@@ -5,33 +5,48 @@
             "title": "1. Fonctionnalités",
             "description": "",
             "date_creation": "2025-01-01",
-            "date_echeance": "2025-03-01",
-            "done": true,
-            "urgent": false,
-            "contacts": [
-                {
-                    "name": "Paul"
-                }
-            ]
+            "date_echeance": "2025-03-20",
+            "etat": "Reussi",
+            "urgent": false
         },
         {
             "id": 102,
             "title": "2. Etude de marché",
             "description": "",
-            "date_creation": "2025-01-02",
-            "date_echeance": "2025-03-01",
-            "done": true,
-            "urgent": true,
-            "contacts": []
+            "date_creation": "2025-01-01",
+            "date_echeance": "2025-04-01",
+            "etat": "En attente",
+            "urgent": false
+        },
+        {
+            "id": 103,
+            "title": "3. Wireframes",
+            "description": "",
+            "date_creation": "2025-01-01",
+            "date_echeance": "2025-04-01",
+            "etat": "Nouveau",
+            "urgent": true
+        }
+    ],
+    "categories": [
+        {
+            "id": 201,
+            "title": "Marketing",
+            "color": "orange",
+            "icon": "",
+            "actif": true
+        },
+        {
+            "id": 202,
+            "title": "Ancien",
+            "color": "blue",
+            "icon": "",
+            "actif": false
         }
     ],
     "relations": [
         {
             "tache": 102,
-            "categorie": 201
-        },
-        {
-            "tache": 108,
             "categorie": 201
         }
     ]
